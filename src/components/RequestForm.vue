@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="ml-2">
       <b-nav pills>
         <b-nav-item @click="nav_list">Request List</b-nav-item>
         <b-nav-item active>New Request</b-nav-item>

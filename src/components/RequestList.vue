@@ -1,8 +1,13 @@
 <template>
   <div>
-    <b-card>
-    <h2>{{ name }}</h2>
-    <b-button @click="new_request" class="mb-3">Request Feature</b-button>
+    <div class="ml-2">
+    <b-nav pills>
+      <b-nav-item active>Request List</b-nav-item>
+      <b-nav-item @click="new_request">New Request</b-nav-item>
+    </b-nav>
+    </div>
+    <b-card class="mt-3">
+    <h2 class="p-3">{{ name }}</h2>
       <div v-for="item in requests" :key="item.id">
       <feature-request :request="item"></feature-request>
       </div>
@@ -18,7 +23,7 @@ export default {
   components: {FeatureRequest},
   data () {
     return {
-      name: 'Workers Compensation Fund',
+      name: 'Software Feature Request System',
       fields: [{
         key: 'title'
       }, {
