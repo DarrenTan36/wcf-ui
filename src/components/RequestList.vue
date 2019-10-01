@@ -2,7 +2,7 @@
   <div>
     <b-card>
     <h2>{{ name }}</h2>
-    <b-button @click="hello" class="mb-3">Request Feature</b-button>
+    <b-button @click="new_request" class="mb-3">Request Feature</b-button>
       <div v-for="item in requests" :key="item.id">
       <feature-request :request="item"></feature-request>
       </div>
@@ -35,6 +35,11 @@ export default {
       next: null,
       previous: null,
       current_page: 1
+    }
+  },
+  methods: {
+    new_request: function () {
+      this.$router.push('/request-form')
     }
   },
   mounted: function () {
