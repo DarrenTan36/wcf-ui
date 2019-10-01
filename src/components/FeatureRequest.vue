@@ -2,7 +2,7 @@
   <div class="feature">
     <b-container>
       <b-row>
-        <b-col class="border" col lg="4">{{ request.title | upper }}</b-col>
+        <b-col col lg="4">{{ request.title | upper }}</b-col>
         <b-col col sm="3"><b-button class="ml-3 mb-2" @click="toggle_display">Details</b-button></b-col>
         <b-col><Flag :priority="request.priority"></Flag></b-col>
       </b-row>
@@ -57,8 +57,7 @@ export default {
   computed: {
     calc_days_left: function () {
       let target = moment(this.request.target_date).startOf('day')
-      let days = target.diff(moment().startOf('day'), 'seconds') / (60 * 60 * 24)
-      return days
+      return target.diff(moment().startOf('day'), 'seconds') / (60 * 60 * 24)
     },
     priority_str: function () {
       return this.priority[this.request.priority]
@@ -89,13 +88,5 @@ export default {
     margin-bottom: 5px;
     margin-top: 5px;
     padding: 10px;
-  }
-  .feature .title {
-    font-family: inherit;
-    font-size: 13px;
-  }
-  #details-button{
-    margin-left: 25px;
-    margin-bottom: 10px;
   }
 </style>
