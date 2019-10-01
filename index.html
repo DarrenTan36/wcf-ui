@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>wcf-ui</title>
+    <style>
+      nav {
+        background-color: #b92026;
+        height: 60px;
+      }
+      footer {
+        background-color: #656569;
+        min-height: 150px;
+        text-align: center;
+        color: white;
+      }
+      #logo {
+        padding-left: 15px;
+      }
+
+    </style>
+  </head>
+  <body>
+  <nav>
+    <img id="logo" src="https://www.wcf.com/sites/default/files/Square%20Logo%20150x80%20px.fw__0.png" width="150px" height="80px" alt="WCF Insurance Company">
+  </nav>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+    <script>
+      import axios from 'axios';
+      axios.defaults.xsrfCookieName = 'csrftoken';
+      axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+      axios.defaults.withCredentials = true;
+      export default axios;
+    </script>
+  <footer>
+    &copy; 2019 WCF Insurance Company
+  </footer>
+  </body>
+</html>
