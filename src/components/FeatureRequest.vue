@@ -1,13 +1,13 @@
 <template>
-  <div class="feature">
-    <b-container>
-      <b-row>
-        <b-col col lg="4">{{ request.title | upper }}</b-col>
-        <b-col col sm="3"><b-button class="ml-3 mb-2" @click="toggle_display">Details</b-button></b-col>
-        <b-col><Flag :priority="request.priority"></Flag></b-col>
+    <b-container class="container-fluid">
+      <b-row class="border p-2 mb-2 rounded">
+        <b-col class="text-left text-truncate" cols="4" lg="4">{{ request.title | upper }}</b-col>
+        <b-col cols="4" sm="3"><b-button class="ml-3 mb-2" @click="toggle_display">Details</b-button></b-col>
+        <b-col cols="4"><Flag :priority="request.priority"></Flag></b-col>
       </b-row>
     <b-card class="rounded p-4" v-show="display_details">
-      <p>{{ request.description }}</p>
+      <h4>{{ request.title | upper }}</h4>
+      <p class="text-left">{{ request.description }}</p>
       <b-container id="container">
         <b-row class="text-left p-2">
           <b-col>Create Date:</b-col>
@@ -25,7 +25,6 @@
       </b-container>
     </b-card>
     </b-container>
-  </div>
 </template>
 
 <script>
@@ -82,11 +81,8 @@ export default {
 </script>
 
 <style scoped>
-  .feature{
-    border-radius: 5px;
-    border: solid 1px silver;
-    margin-bottom: 5px;
-    margin-top: 5px;
-    padding: 10px;
-  }
+h4 {
+  font-size: .90rem;
+  font-weight: bold;
+}
 </style>
